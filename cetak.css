@@ -1,0 +1,54 @@
+/* elemen yang disembunyikan ketika tidak dicetak, tetapi tampil ketika dicetak, contoh <button class="btn printonly"></button>" */
+.printonly {
+    display: none;
+}
+
+/* style ketika di print */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .parentprintarea {
+        visibility: visible;
+        height: initial;
+        position: absolute;
+        top: 0;
+        padding: 0;
+        box-shadow: none !important;
+        background-color: white !important;
+        background-image: none !important;
+    }
+
+    .parentprintarea * {
+        visibility: visible;
+        box-shadow: none !important;
+        background-color: white !important;
+        background-image: none !important;
+    }
+
+    /* elemen yang tampil ketika tidak dicetak, tetapi disembunyikan ketika dicetak, contoh <button class="btn hideprint"></button>" */
+    .hideprint {
+        display: none; 
+    }
+
+    /* elemen yang disembunyikan ketika tidak dicetak, tetapi tampil ketika dicetak, contoh <button class="btn printonly"></button>" */
+    .printonly {
+        display: block !important;
+    }
+    
+    /* membuat satu elemen dalam 1 halaman */
+    .keeptogether-team {
+        page-break-inside: avoid;
+    }
+ 
+    /* menampilkan border ketika dicetak */
+    .printborder {
+        border: thin gray solid !important;
+    }
+
+    /* membuat border melengkung ketika dicetak */
+    .printrounded {
+        border-radius: 2rem !important;
+    }
+}
